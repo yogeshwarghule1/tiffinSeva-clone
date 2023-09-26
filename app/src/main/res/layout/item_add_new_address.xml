@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="obj"
+            type="org.android.tiffinseva.tiffinrequestreceive.AddNewAddress" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/baseAddressView"
+        android:layout_width="@dimen/height_100dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_12dp"
+        android:layout_marginRight="@dimen/margin_24dp"
+        android:onClick="@{()-> obj.clickHandler.addNewAddressCardClick()}"
+        android:background="@drawable/dotted_border">
+
+        <ImageView
+            android:id="@+id/ivNewAddress"
+            android:layout_width="@dimen/width_24dp"
+            android:layout_height="@dimen/height_24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/newAddressTv"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/ic_plus" />
+
+        <TextView
+            android:id="@+id/newAddressTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:gravity="center"
+            android:text="@string/add_new_addreess"
+            android:textColor="@color/chateau_green"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivNewAddress" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

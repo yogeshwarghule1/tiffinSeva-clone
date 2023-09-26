@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white">
+
+    <ImageView
+        android:id="@+id/ivAppLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/app_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        layout="@layout/bottom_image_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <include
+        android:id="@+id/editTextLayout"
+        layout="@layout/custom_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_60dp"
+        android:layout_marginTop="@dimen/margin_68dp"
+        android:layout_marginRight="@dimen/margin_60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppLogo" />
+
+    <Button
+        android:id="@+id/btnGenerateOtp"
+        style="@style/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_60dp"
+        android:layout_marginLeft="@dimen/margin_60dp"
+        android:layout_marginTop="@dimen/margin_30dp"
+        android:layout_marginRight="@dimen/margin_60dp"
+        android:text="@string/login_screen_login"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextLayout" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_1dp"
+        android:layout_marginBottom="@dimen/margin_60dp"
+        android:background="@color/greyish_brown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSingupLabel"
+        style="@style/generalTextLabelsStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_24dp"
+        android:text="@string/login_dont_have_acc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvSingupText" />
+
+    <TextView
+        android:id="@+id/tvSingupText"
+        style="@style/generalTextLabelsStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_12dp"
+        android:layout_marginBottom="@dimen/margin_24dp"
+        android:text="@string/sign_up_register"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textColor="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tvSingupLabel"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

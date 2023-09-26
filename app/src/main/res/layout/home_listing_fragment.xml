@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fafafa"
+    tools:context=".homeflow.homelistingfragment.HomeListingFragment">
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textCursorDrawable="@null"
+        app:iconifiedByDefault="false"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:queryBackground="@null"
+        app:queryHint="Search by Address"
+        android:id="@+id/svTiffinProvider"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:id="@+id/tvNoDataAvailable"
+        android:textColor="@color/greay"
+        android:lineSpacingExtra="6sp"
+        android:layout_gravity="center_horizontal"></TextView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvTiffinProvider"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:paddingBottom="?attr/actionBarSize"
+        app:layout_constraintTop_toBottomOf="@+id/svTiffinProvider" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

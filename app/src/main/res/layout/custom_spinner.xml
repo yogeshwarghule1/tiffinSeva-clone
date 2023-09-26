@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="org.android.tiffinseva.manageaddress.SpinnerSelectionListener" />
+
+        <variable
+            name="obj"
+            type="org.android.tiffinseva.model.SpinnerData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/spinner"
+            style="@style/spinnerStyle"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:spinnerItemSelectionListener="@{listener}"
+            app:selectedItemIndex="@={obj.selectedItemPosition}"
+            app:spinnerItemList="@{obj.spinnerData}" />
+
+        <TextView
+            android:id="@+id/tvLabel"
+            style="@style/customTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{obj.textHint}"
+            app:layout_constraintBottom_toTopOf="@id/spinner"
+            app:layout_constraintLeft_toLeftOf="@id/spinner"
+            app:layout_constraintTop_toTopOf="@id/spinner"
+            tools:text="dummyText" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_16dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_down" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

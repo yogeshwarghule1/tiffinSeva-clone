@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="silver">#b9b9b9</color>
+    <color name="greyish_brown">#595350</color>
+    <color name="greyish_brown_40_per">#66595350</color>
+    <color name="white">#ffffff</color>
+    <color name="orange">#f49d00</color>
+    <color name="tomato">#ee3124</color>
+    <color name="app_black">#000000</color>
+    <color name="app_grey">#7987a1</color>
+    <color name="app_purple">#727cf5</color>
+    <color name="marigold">#fdca00</color>
+    <color name="bright_yellow">#fff000</color>
+    <color name="clear_blue">#1768e4</color>
+    <color name="pale_grey">#f9fafb</color>
+    <color name="app_orang">#f49d00</color>
+    <color name="app_pitch">#fff3df</color>
+    <color name="app_white">#ffffff</color>
+    <color name="app_blue">#007bff</color>
+    <color name="app_green">#10b759</color>
+    <color name="app_orange">#f97c02</color>
+    <color name="platinum">#e7e7e7</color>
+    <color name="greay">#777777</color>
+    <color name="chateau_green">#43B05C</color>
+
+
+    <color name="errorColor">#f49d00</color>
+    <color name="successColor">#03DAC5</color>
+</resources>

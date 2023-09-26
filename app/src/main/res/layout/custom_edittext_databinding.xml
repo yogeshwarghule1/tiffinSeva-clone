@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="obj"
+            type="org.android.tiffinseva.model.EditTextData" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextview"
+            style="@style/customEditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:focusableInTouchMode="true"
+            android:maxLength="@{obj.maxLength}"
+            android:inputType="@{obj.inputType}"
+            android:text="@={obj.editTextData}"
+            app:errorText="@{obj.errorText}"
+            android:onTextChanged="@{obj.handler.onTextChange }"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLabel"
+            style="@style/customTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_16dp"
+            android:text="@{obj.textHint}"
+            app:layout_constraintBottom_toTopOf="@id/editTextview"
+            app:layout_constraintLeft_toLeftOf="@id/editTextview"
+            app:layout_constraintTop_toTopOf="@id/editTextview"
+            tools:text="@string/login_mobile_number" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

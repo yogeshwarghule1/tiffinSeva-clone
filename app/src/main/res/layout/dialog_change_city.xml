@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="obj"
+            type="org.android.tiffinseva.manageaddress.ChangeCityVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_white_radius_4dp">
+        <include
+            android:id="@+id/pincode_edit_text"
+            layout="@layout/custom_edittext_databinding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:layout_marginRight="@dimen/margin_20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:obj="@{obj.pinCodeEditText}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:layout_marginRight="@dimen/margin_20dp"
+            android:text="@{obj.pincodeVerificationTvText}"
+            android:textColor="@{obj.isValidPinCode()? @color/app_green :@color/orange}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pincode_edit_text"
+            app:visibility="@{obj.pincodeVerificationTvVisibility}"
+            tools:text="Valid  pincode" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/buttonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_60dp"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:foreground="?selectableItemBackground"
+            android:onClick="@{()-> obj.clickHandler.onViewClick()}"
+            android:text="@string/submit_btn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pincode_edit_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

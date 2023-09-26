@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="obj"
+            type="org.android.tiffinseva.tiffinrequestreceive.TiffinRequestReceiveVm" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:bind="http://schemas.android.com/tools"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/margin_16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rightGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/margin_16dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_92dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                app:layout_constraintLeft_toRightOf="@id/leftGuideline"
+                app:layout_constraintRight_toLeftOf="@id/rightGuideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="@dimen/width_64dp"
+                android:layout_height="@dimen/height_64dp"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:elevation="@dimen/elevation_2dp"
+                app:ttsImageUrl="@{obj.imageUrl}"
+                app:layout_constraintBottom_toBottomOf="@id/cardView"
+                app:layout_constraintLeft_toLeftOf="@id/cardView"
+                app:layout_constraintTop_toTopOf="@id/cardView" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="@dimen/width_1dp"
+                android:layout_height="@dimen/height_48dp"
+                android:layout_marginLeft="@dimen/margin_24dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:layout_marginBottom="@dimen/margin_24dp"
+                android:background="@color/greyish_brown"
+                android:elevation="@dimen/elevation_2dp"
+                app:layout_constraintBottom_toBottomOf="@id/cardView"
+                app:layout_constraintLeft_toRightOf="@id/ivAvatar"
+                app:layout_constraintTop_toTopOf="@id/cardView" />
+
+            <TextView
+                android:id="@+id/tvTifinData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_16dp"
+                android:elevation="@dimen/elevation_2dp"
+                android:text="@{obj.userTypeText}"
+                android:textColor="@color/greyish_brown"
+                android:textSize="@dimen/font_14sp"
+                app:layout_constraintLeft_toRightOf="@id/view"
+                app:layout_constraintTop_toTopOf="@id/cardView"
+                tools:text="Requested Tiffin" />
+
+
+            <TextView
+                android:id="@+id/tvTifinNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_4dp"
+                android:layout_marginRight="@dimen/margin_16dp"
+                android:elevation="@dimen/elevation_2dp"
+                android:text="@{obj.tiffinHistoryCount}"
+                android:textColor="@color/greyish_brown"
+                android:textSize="@dimen/font_30sp"
+                app:layout_constraintLeft_toRightOf="@id/view"
+                app:layout_constraintTop_toBottomOf="@id/tvTifinData"
+                tools:text="5+" />
+
+            <View
+                android:id="@+id/whiteBg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+            <TextView
+                android:id="@+id/tvSavedAddressTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_24dp"
+                android:textColor="@color/greay"
+                android:textSize="@dimen/font_14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/whiteBg"
+                tools:text="Saved Addresses" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSavedAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="@dimen/height_200dp"
+                android:layout_marginTop="@dimen/margin_12dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSavedAddressTitle"
+                tools:itemCount="10"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_saved_address"
+                tools:orientation="horizontal" />
+
+            <include
+                android:id="@+id/customDateAndTime"
+                layout="@layout/custom_textview_with_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvSavedAddress"
+                bind:obj="@{obj.tiffinDate}" />
+
+            <include
+                android:id="@+id/numberOfTiffin"
+                layout="@layout/custom_edittext_databinding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/customDateAndTime"
+                bind:obj="@{obj.etNumberOfTiffin}" />
+
+            <include
+                android:id="@+id/chk_terms"
+                layout="@layout/custom_checkbox_tnc_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/numberOfTiffin"
+                bind:obj="@{obj.termsAndConds}" />
+
+            <Button
+                android:id="@+id/btnTiifin"
+                style="@style/buttonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_60dp"
+                android:layout_marginLeft="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:text="@{obj.buttonText}"
+                android:onClick="@{()->obj.clickHandler.onSubmitButtonClick()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chk_terms"
+                tools:text="@string/request_tiffin_btn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

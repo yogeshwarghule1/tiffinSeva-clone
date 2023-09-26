@@ -1,0 +1,40 @@
+{
+  "project_info": {
+   "project_number": "91289794249",
+    "firebase_url": "https://tiffinseva-7ec40.firebaseio.com",
+    "project_id": "tiffinseva-7ec40",
+    "storage_bucket": "tiffinseva-7ec40.appspot.com"
+  },
+  "client": [
+   {
+      "client_info": {
+        "mobilesdk_app_id": "1:91289794249:android:4ab6373129c20cbd18bf18",
+        "android_client_info": {
+          "package_name": "org.android.tiffinseva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91289794249-g50gfkbt1r8pi33kvk2samiseq9tt10m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmckJKwdf-9Uoz3kPCI-wYf6nfbLEqc5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+         "other_platform_oauth_client": [
+           {
+              "client_id": "91289794249-g50gfkbt1r8pi33kvk2samiseq9tt10m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

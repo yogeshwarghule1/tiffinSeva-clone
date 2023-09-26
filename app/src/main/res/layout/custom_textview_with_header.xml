@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="obj"
+            type="org.android.tiffinseva.model.TextViewData" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvData"
+            style="@style/customEditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:onClick="@{()->obj.handler.onTextViewClick(obj)}"
+            android:text="@={obj.textData}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/width_20dp"
+            android:layout_height="@dimen/height_20dp"
+            android:layout_marginRight="@dimen/margin_16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvData"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvData"
+            app:srcCompat="@{obj.drawableId}"
+            tools:srcCompat="@drawable/ic_calendar" />
+
+        <TextView
+            android:id="@+id/tvLabel"
+            style="@style/customTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_16dp"
+            android:text="@{obj.textHint}"
+            app:layout_constraintBottom_toTopOf="@id/tvData"
+            app:layout_constraintLeft_toLeftOf="@id/tvData"
+            app:layout_constraintTop_toTopOf="@id/tvData"
+            tools:text="@string/login_mobile_number" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
